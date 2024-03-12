@@ -1,0 +1,27 @@
+Strong Number is a number if the given number is equal to the sum of factorial of its individual digits. ex- 145-- 1,4,5--1!+4!+5!--1+24+120 = 145-- yes its a strong number.
+
+public class Main
+{   public static int fact(int num){
+        int fct=1;
+        for(int i=1;i<=num;i++){
+            fct*=i;
+        }return fct;
+}
+ 
+	public static void main(String[] args) {
+	    int n=110;
+	    int temp=n;
+	    int quo=0;
+	    int sum=0;
+	    while(n>0){
+	        quo=n%10;
+	        n=n/10;
+	        sum+=fact(quo);
+	    }
+	    if(sum==temp){
+	        System.out.println(sum+"Strong Number");
+	    }else{
+	        System.out.println(sum+"No");
+	    }
+	}
+}
